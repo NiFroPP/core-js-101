@@ -117,10 +117,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  if ((value === 'A') && (count === 5)) {
-    return 'AAAAA';
-  }
-  return 'catcatcat';
+  return value.repeat(count);
 }
 
 
