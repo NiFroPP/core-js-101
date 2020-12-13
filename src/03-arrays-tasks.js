@@ -20,8 +20,8 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
@@ -146,13 +146,12 @@ function getStringsLength(arr) {
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-  // const arr2 = arr.slice(index);
-  // const arr1 = arr.slice(0, index);
-  // arr1.push(item);
-  // return (arr1.concat(arr2));
-  throw new Error('Not implemented');
+function insertItem(arr, item, index) {
+  arr.splice(index, 0, item);
+  return arr;
 }
+
+
 /**
  * Returns the n first items of the specified array
  *
@@ -292,8 +291,9 @@ function propagateItemsByPositionIndex(/* arr */) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  const res = arr.sort((a, b) => b - a);
+  return res.slice(0, 3);
 }
 
 
@@ -328,8 +328,29 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  let res = [];
+  const arr0 = arr.filter((ind) => ind === 'zero');
+  const arr1 = arr.filter((ind) => ind === 'one');
+  const arr2 = arr.filter((ind) => ind === 'two');
+  const arr3 = arr.filter((ind) => ind === 'three');
+  const arr4 = arr.filter((ind) => ind === 'four');
+  const arr5 = arr.filter((ind) => ind === 'five');
+  const arr6 = arr.filter((ind) => ind === 'six');
+  const arr7 = arr.filter((ind) => ind === 'seven');
+  const arr8 = arr.filter((ind) => ind === 'eight');
+  const arr9 = arr.filter((ind) => ind === 'nine');
+  res = arr0
+    .concat(arr1)
+    .concat(arr2)
+    .concat(arr3)
+    .concat(arr4)
+    .concat(arr5)
+    .concat(arr6)
+    .concat(arr7)
+    .concat(arr8)
+    .concat(arr9);
+  return res;
 }
 
 /**
